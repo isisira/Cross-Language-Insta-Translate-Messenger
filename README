@@ -1,4 +1,3 @@
-
 1. Introduction
 “There must be a language that doesn't depend on words, the boy thought. I've already
 had that experience with my sheep, and now it's happening with people.”[1]
@@ -64,3 +63,123 @@ which may lead to a valuable cultural exchange.
  Thus with our proposed solution supporting many languages like
 French, German, Finnish, Czech, Serbian etc. and our own Indian language Hindi,
 the applications are bound to be many.
+
+2.Key concepts:
+
+This section describes the key technologies used for development:
+
+The Server
+The server's main function is to wait for incoming requests, and to service them when
+they come in. So the code to implement the server can be further broken down to the
+following steps:
+1. Establish a server that monitors a particular port. This is done by creating an instance
+of the ServerSocket class. There are four different ways to create an instance of
+ServerSocket. They are:
+a. ServerSocket(), which simply sets the implementation that means everything is taken as
+default values.
+b. ServerSocket(int port), which creates a server-side socket and binds the socket to the
+given port number.
+c. ServerSocket(int port, int backlog), which not only binds the created socket to the port
+but also create a queue of length specified by the number passed as the backlog
+parameter.
+d. ServerSocket(int port, int backlog, InetAddress bindAddr), which creates a server-side
+socket that is bound to the specified port number with the queue of length specified by the
+backlog and bound to the address specified by the bindAddr argument.
+So to create a socket bound to port number 8888 with a backlog queue of size 5 and
+bound with address of local host the statement would be:
+ServerSocket server = new ServerSocket(8888, 5, InetAddress.getLocalHost() );
+One point to keep in mind is that the above mentioned constructors return TCP sockets
+and not UDP sockets.
+2. The next step is to tell the newly created server socket to listen indefinitely and accept
+incoming requests. This is done by using the accept() method of ServerSocket class.
+When a request comes, accept() returns a Socket object representing the connection. In
+code it would be:
+Socket incoming = server.accept();
+3. Communicating with the socket, which means reading from and writing to the Socket
+object. To communicate with a Socket object, two tasks have to be performed. First the
+Input and Output stream corresponding to the Socket object has to be obtained. That can
+be done by using the getInputStream() and getOutputStream() methods of Socket class.
+4. Once the client breaks the connection or stops sending the request, the Socket object
+representing the client has to be closed. This can be done by calling close() method on the
+Socket object.
+
+The Client
+The main purpose of the client is to connect to the server and communicate with it using
+the connection. So coding a client requires the following steps:
+1. Connect to the server. Connecting to the server can be accomplished in two steps:
+a. Creating a Socket object. The socket at client side just needs to know the host name
+(the name of the machine where server is running) and the port where the server is
+listening.
+To create a Socket object, there are seven constructors provided by the Socket class, of
+which the most commonly used are:
+ Socket(), which creates a new Socket instance without connecting
+to host.
+ Socket(InetAddress address, int port), which creates a new Socket
+object and connects to the port specified at the given address.
+ Socket(java.lang.String host, int port), which works the same way
+as Socket(), except that instead of an address, the host name is
+used.
+So to create a Socket object that connects to 'localhost' at 8888, the statement would be:
+Socket s=new Socket("localhost",8888);
+
+b. Connecting to the server comes into picture if no argument constructor is used. It
+takes the object of the SocketAddress object as an argument. So to connect to localhost at
+port 8888, the code would be:
+Socket s= new Socket();
+s.connect(new SocketAddress("localhost",8888));
+2. Communicating with the server. Communicating with the server using a socket at
+client side is no different from how the server communicates with the client.
+
+
+2.3.2 Message serialization [9]
+Serialization is the process of taking objects and converting their state information into a
+form that can be stored or transported. The basic idea of serialization is that an object
+writes its current state, usually indicated by the value of its member variables, to
+persistent storage. Later, the object can be re-created by reading, or deserializing, the
+object's state from the storage. Serialization handles all the details of object pointers and
+circular object references that are used when you serialize an object.
+In the message-queuing feature, serialization refers specifically to the process of
+converting an object or set of data into a message that can be sent to a queue, and then
+converting messages retrieved from the queue back into objects or data that your
+application can process.
+In our application, we specifically focus on converting message objects into bytes and
+back.
+
+
+2.3.3 Google Translation API [10]
+Google Translate is as a beta service provided by Google Inc. to translate a section of
+text, or a webpage, into another language, with limits to the number of paragraphs, or
+range of technical terms, translated.
+Google Translate, like other automatic translation tools, has its limitations. While it can
+help the reader to understand the general content of a foreign language text, it does not
+always deliver accurate translations. Some languages produce better results than others.
+It does not apply grammatical rules, since its algorithms are based on statistical analysis
+rather than traditional rule-based analysis. Google translate is based on an approach called
+statistical machine translation, and more specifically, on research by Franz-Josef Och
+who won the DARPA contest for speed machine translation in 2003.
+According to Och, a solid base for developing a usable statistical machine translation
+system for a new pair of languages from scratch, would consist in having a bilingual text
+corpus (or parallel collection) of more than a million words and two monolingual corpora
+of each more than a billion words. Statistical models from this data are then used to
+translate between those languages.
+To acquire this huge amount of linguistic data, Google used United Nations documents.
+The same document is normally available in all six official UN languages (Arabic,
+Chinese, English, French, Russian, Spanish), thus Google now has a 7-language corpus of
+20 billion words' worth of human translations.
+The availability of Arabic and Chinese as official UN languages is probably one of the
+reasons why Google Translate initially focused on the development of translation
+between English and those languages, and not, for example, Japanese and German, which
+are not official languages at the UN.
+
+3.SYSTEM REQUIREMENTS :
+
+3.1.1 Hardware Requirements
+Processor: 1GHz or higher
+Hard Drive: 1GB free disk space
+Memory: 1GB RAM
+3.1.2 Software Requirements
+Operating system: Windows XP Service Pack 2 or higher with Regional Language
+Packs installed for inputting Local language characters
+
+Java Runtime Envirmonment
+
