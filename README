@@ -1,1 +1,66 @@
-Description about Cross Language Insta Translate Messenger
+
+1. Introduction
+“There must be a language that doesn't depend on words, the boy thought. I've already
+had that experience with my sheep, and now it's happening with people.”[1]
+-Paulo Coelho “The Alchemist”
+These words by the author speak of a universal language understood by all the living
+beings –men and animals alike. Though, such a language may have existed –we have for
+long forgotten its usage. Today, even with the internet bringing the people together to
+make a global village, there still exists a barrier between people called –“Language”.
+There are numerous email services, chat messengers, voice and video conferencing tools
+existing today, however they are useful only when the medium of communication- the
+language- is same at all ends. Else, they are of little use.
+To overcome this last hurdle in bringing the people from various geographies, cultures,
+linguistics together-we planned to build a chat messenger which enabled people to send
+and receive messages in their own languages irrespective of what language the person at
+other end was using.
+
+1.1 Review of the present scenario and the proposed solution
+The traditional and unchanged method of conversation between the people speaking
+different languages is to engage a translator between them. But, it is not always feasible
+and possible to deploy human translators for all the conversations.
+The advancements of computing and machine learning have led to the development of
+computer based translators. Though they solve the former problem to a large extent, their
+application in real time communication is hindered by following short comes:
+ Standalone applications for translation like IMtranslator.
+Not integrated with messengers and copy-paste procedures are not feasible for
+instant messaging or any sort of real time communication.
+ Add-ons and plug-ins like Microsoft TBOT which support only specific
+messengers like Windows Live messenger.
+ Other paid services with support for only few international languages. No service
+available for Indian languages like Hindi.
+ Even with few applications providing translation services, interfaces still in
+English.
+
+1.1.1 The proposed solution:
+To overcome the above problems, we aim at building the Cross Language Insta-Translate
+Messenger which is an open source instant messenger just like Yahoo Messenger or AIM
+with facilities such as one to one text messaging, conference rooms, emoticons etc. but
+unlike them has some unique features like:
+ Translation built into it using the Google Translation API [2] which
+enables a very convenient and easy way for text chatting between people of
+different languages.
+ It also provides the interface in the language, the user desires.
+
+1.2 Application fields of the proposed solution
+The proposed Cross Language Insta-Translate Messenger can be of great use in many day
+to day applications. The application fields range from hospitality industry to corporate
+world. We see few examples of its usage as below:
+ A hotel can install this application in all its rooms and kiosks and
+maintain a central customer support server. Whenever a tourist speaking a
+different language wants to know some information, he can easily chat with the
+customer service desk in his own language irrespective of whether the people at
+the desk don’t know his language or not.
+ In a software development company, like the one in which we did our
+project, there is many a times need of collaboration between people from various
+geographies like Europe and East Asian countries like China, Korea, Japan etc..
+Most of the times communicating with them can become a problem as not very
+comfortable with English. Our solution is very useful in solving this problem.
+ Apart from these specific applications, there can many useful
+applications that may spring up in our daily life-like a – grandparent in Uttar
+Pradesh can chat using this solution with his grandson in USA who doesn’t know
+Hindi. Or it may even be a simple time-pass chat between a Serb and an Arab
+which may lead to a valuable cultural exchange.
+ Thus with our proposed solution supporting many languages like
+French, German, Finnish, Czech, Serbian etc. and our own Indian language Hindi,
+the applications are bound to be many.
